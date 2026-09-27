@@ -1,2 +1,16 @@
 <h1>Users#index</h1>
 <p>Find me in app/views/users/index.html.erb</p>
+<h1>Products</h1>
+
+<div id="users">
+  <% @users.each do |users| %>
+    <div>
+      <%= users.name %> <br>
+      <%= users.surname %> <br>
+      <%= users.email_address %> <br>
+      <%= users.created_at %> <br>
+      <%= users.updated_at %> <br>
+      <%= "---------------------------------" %> <br>
+    </div>
+  <% end %>
+</div>
