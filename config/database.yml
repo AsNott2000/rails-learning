@@ -21,7 +21,6 @@ default: &default
 
   # url: postgres://rubydeneme:1719@localhost:5432
 
-
 development:
   <<: *default
   database: rubydeneme
