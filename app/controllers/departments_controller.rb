@@ -1,5 +1,7 @@
 class DepartmentsController < ApplicationController
-  before_action :set_department, only: %i[show edit update]
+  before_action :set_department, only: %i[
+    show edit update destroy]
+  allow_unauthenticated_access only: %i[ index show ]
   def index
     @departments = Department.all
   end
@@ -29,6 +31,11 @@ class DepartmentsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @department.destroy
+    redirect_to departments_path
   end
 
   private
