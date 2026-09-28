@@ -19,6 +19,20 @@ class DepartmentsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
+  def edit
+    @department = Department.find params[:id]
+  end
+
+  def update
+    @department = Department.find params[:id]
+    if @department.update(department_params)
+      redirect_to @department
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
     def department_params
       params.expect department: [ :department_name ]

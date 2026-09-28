@@ -1,7 +1,7 @@
 <h1><%= @department.department_name %></h1>
 
 <%= link_to "Back", departments_path %><br>
-
+<%= link_to "Edit", edit_department_path(@department)%> <br>
 <%= @department.id %> <br>
 <%= @department.department_name %> <br>
 <%= @department.created_at %> <br>

@@ -1,0 +1,19 @@
+<%= form_with model: department do |form|%>
+    <% if form.object.errors.any? %>
+        <p class="error">
+            <%= form.object.errors.full_message.first %>
+        </p>
+    <% end %>
+
+
+
+
+    <div>
+        <%= form.label :department_name %>
+        <%= form.text_field :department_name %>
+    </div>
+
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>
