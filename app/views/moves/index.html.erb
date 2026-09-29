@@ -1,2 +1,25 @@
 <h1>Moves#index</h1>
 <p>Find me in app/views/moves/index.html.erb</p>
+<h1>Moves</h1>
+<div>===================================</div>
+  <%= link_to 'New Move', new_move_path%>
+<div>===================================</div>
+
+<div id="moves">
+  <% @moves.each do |move| %>
+    <%= move.id%><br>
+    <%= move.department_id %><br>
+    <%= move.user_id %><br>
+    <%= move.amount %><br>
+    <%= move.move_type %><br>
+    <%= move.description %><br>
+    =========================<br>
+  <% end %>
+  <div id = "moves_by_id">
+    <% @moves.each do |move|%>
+      <div>
+        <%= link_to move.id, move_path(move.id)%><br>
+      </div>
+    <% end %>
+  </div>
+</div>

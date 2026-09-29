@@ -1,0 +1,32 @@
+<%= form_with model: move do |form|%>
+    <% if form.object.errors.any? %>
+        <p class="error">
+            <%= form.object.errors.full_messages.first %>
+        </p>
+    <% end %>
+
+
+    <div>
+        <%= form.label :department_id %>
+        <%= form.collection_select :department_id, Department.all, :id, :department_name%>
+    </div>
+    <div>
+        <%= form.hidden_field :user_id, value: Current.user.id%>
+    </div>
+    <div>
+        <%= form.label :amount %>
+        <%= form.number_field :amount %>
+    </div>
+    <div>
+        <%= form.label :move_type %>
+        <%= form.number_field :move_type %>
+    </div>
+    <div>
+        <%= form.label :description %>
+        <%= form.text_field :description %>
+    </div>
+
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>

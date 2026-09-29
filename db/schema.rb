@@ -45,7 +45,7 @@ ActiveRecord::Schema[8.2].define(version: 2026_09_29_074505) do
     t.uuid "department_id", null: false
     t.uuid "user_id", null: false
     t.decimal "amount", precision: 18, scale: 4, null: false
-    t.integer "type", null: false
+    t.integer "move_type", null: false
     t.string "description"
     t.index ["department_id"], name: "index_moves_on_department_id"
     t.index ["user_id"], name: "index_moves_on_user_id"

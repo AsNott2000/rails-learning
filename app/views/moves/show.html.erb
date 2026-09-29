@@ -1,0 +1,17 @@
+<h1>Move Details</h1>
+
+<%= link_to "Back to Moves", moves_path %> |
+<%= link_to "Edit", edit_move_path(@move) %>
+<%= button_to "Delete", @move, method: :delete, data: 
+    {
+        turbo_confirm: "Are you sure?"
+    }  %>
+
+<p><strong>ID:</strong> <%= @move.id %></p>
+<p><strong>Department ID:</strong> <%= @move.department_id %></p>
+<p><strong>User ID:</strong> <%= @move.user_id %></p>
+<p><strong>Amount:</strong> <%= @move.amount %></p>
+<p><strong>Move Type:</strong> <%= @move.move_type %></p>
+<p><strong>Description:</strong> <%= @move.description %></p>
+
+
