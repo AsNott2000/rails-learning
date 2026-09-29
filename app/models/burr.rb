@@ -1,0 +1,2 @@
+class Burr < ApplicationRecord
+end
